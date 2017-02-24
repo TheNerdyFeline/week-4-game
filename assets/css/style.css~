@@ -1,0 +1,7 @@
+.row2 {
+    background-image: url("../images/sky1.jpg");
+}
+
+img {
+    width: 250px;
+}

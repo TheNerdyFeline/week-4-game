@@ -1,0 +1,113 @@
+// wait for doc to load before starting
+$ (document).ready();
+
+// declare variables
+var pickDragon = false;
+var pickEnemy = false;
+var dragonList = [];
+var newAttack = 0;
+var newHealth = 0;
+
+//create object for dragons
+function dragon(attack, counter, healthPoints) {
+    this.attackPower = attack;
+    this.ctAttack = counter;
+    this.healthPoints = healthPoints;
+}
+
+var drg1 = new dragon(5, 15, 150);
+var drg2 = new dragon(7, 17, 200);
+var drg3 = new dragon(9, 19, 250);
+var drg4 = new dragon(11, 21, 300);
+var drg5 = new dragon(13, 25, 350);
+
+dragonList.push(drg1, drg2, drg3, drg4, drg5);
+console.log (dragonList);
+
+// show dragon info in html
+$("#atkPw1").html(drg1.attackPower);
+$("#atkPw2").html(drg2.attackPower);
+$("#atkPw3").html(drg3.attackPower);
+$("#atkPw4").html(drg4.attackPower);
+$("#atkPw5").html(drg5.attackPower);
+$("#ctrAtPw1").html(drg1.ctAttack);
+$("#ctrAtPw2").html(drg2.ctAttack);
+$("#ctrAtPw3").html(drg3.ctAttack);
+$("#ctrAtPw4").html(drg4.ctAttack);
+$("#ctrAtPw5").html(drg5.ctAttack);
+$("#health1").html(drg1.healthPoints);
+$("#health2").html(drg2.healthPoints);
+$("#health3").html(drg3.healthPoints);
+$("#health4").html(drg4.healthPoints);
+$("#health5").html(drg5.healthPoints);
+
+$("#reset").hide();
+var myDragon, defendDragon;
+// build on click function to see if any .dragon clicked
+// when user picks dragon move to yourDragon
+$("#d1").on("click",function() {
+    if (!pickDragon && !pickEnemy) {
+	$("#d1").appendTo($("#yourDragon"));
+	myDragon = "#health1";
+	pickDragon = true;
+    } else if (!pickEnemy && pickDragon){
+	$("#d1").appendTo($("#defender"));
+	defendDragon = "#health1";
+	pickEnemy = true;
+    }
+});
+	   
+$("#d2").on("click",function() {
+    if (!pickDragon && !pickEnemy) {
+	$("#d2").appendTo($("#yourDragon"));
+	myDragon = "#health2";
+	pickDragon = true;
+    } else if (!pickEnemy && pickDragon){
+	$("#d2").appendTo($("#defender"));
+	defendDragon = "#health2";
+	pickEnemy = true;
+    }
+});
+
+$("#d3").on("click",function() {
+    if (!pickDragon && !pickEnemy) {
+	$("#d3").appendTo($("#yourDragon"));
+	pickDragon = true;
+    } else if (!pickEnemy && pickDragon){
+	$("#d3").appendTo($("#defender"));
+	pickEnemy = true;
+    }
+});
+
+$("#d4").on("click",function() {
+    if (!pickDragon && !pickEnemy) {
+	$("#d4").appendTo($("#yourDragon"));
+	pickDragon = true;
+    } else if (!pickEnemy && pickDragon){
+	$("#d4").appendTo($("#defender"));
+	pickEnemy = true;
+    }
+});
+
+$("#d5").on("click",function() {
+    if (!pickDragon && !pickEnemy) {
+	$("#d5").appendTo($("#yourDragon"));
+	pickDragon = true;
+    } else if (!pickEnemy && pickDragon){
+	$("#d5").appendTo($("#defender"));
+	pickEnemy = true;
+    }
+});
+   
+
+// when user clicks attack change counters and show info
+$("#attack").on("click", function(){
+    console.log(dragon.healthPoints);
+    var myDragonHealth= $(myDragon).html();
+    myDragonHealth = parseInt(myDragonHealth)-30;
+    console.log(myDragonHealth, 'lksdjflk');
+    $(myDragon).html(myDragonHealth);
+});
+
+// update counters and when hit 0 what to do
+// reset appears when user wins or loses and resets all counters

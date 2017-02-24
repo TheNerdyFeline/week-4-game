@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+    <head>
+	<title>Dragon Fighting</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Baloo" rel="stylesheet">
+	<link href="assets/css/style.css" rel="stylesheet">
+    </head>
+    <body>
+	<div class="container">
+	    <div class="row row1">
+		<div class="jumbotron">
+		<h1>Dragon Fighting</h1>
+		<p>Pick a dragon to fight as, and defeat all remaining dragons. You pick the order you fight them in, choose wisely.</p>
+		</div> <!-- close jumbotron -->
+	    </div> <!-- clase row1 -->
+	    <div class="row row2">
+		<div class="col-sm-12" id="chooseDragon">
+			<div class="col-sm-2">
+			    <div id="d1" class="dragon">
+				<h4>Attack: <span id="atkPw1" class="atk"></span></h4><h4>Counter Attack: <span id="ctrAtPw1" class="ctAt"></span></h4>
+				<br>
+				<img class="responsive-image" id="dragon1" alt="dragon1" src="assets/images/dragon1.gif">
+				<div class="health"><h4>Health: <span id="health1" class="hp"></span></h4></div>
+			    </div> <!-- close d1 -->
+			</div> <!-- close dragon1 col -->
+			<div class="col-sm-2">
+			    <div id="d2" class="dragon">
+			    	<h4>Attack: <span id="atkPw2" class="atk"></span></h4><h4>Counter Attack: <span id="ctrAtPw2" class="ctAt"></span></h4>			    <br>
+			    <img class="responsive-image" id="dragon2" alt="dragon2" src="assets/images/dragon2.gif">
+			    <div><h4>Health: <span id="health2" class="hp"></span></h4></div>
+			    </div> <!-- close d2 -->
+			</div><!-- close dragon2 box -->
+			<div class="col-sm-2">
+			    <div id="d3" class="dragon">
+			    	<h4>Attack: <span id="atkPw3" class="atk"></span></h4><h4>Counter Attack: <span id="ctrAtPw3" class="ctAt"></span></h4>
+			    <br>
+			    <img class="responsive-image" id="dragon3" alt="dragon3" src="assets/images/dragon3.gif">
+			    <div class="health"><h4>Health: <span id="health3" class="hp"></span></h4></div>
+			    </div> <!-- close d3 -->
+			</div><!-- close dragon3 box -->
+			<div class="col-sm-2">
+			    <div id="d4" class="dragon">
+			    	<h4>Attack: <span id="atkPw4" class="atk"></span></h4><h4>Counter Attack: <span id="ctrAtPw4" class="ctAt"></span></h4>		    <br>
+			    <img class="responsive-image" id="dragon4" alt="dragon4" src="assets/images/dragon4.gif">
+			    <div class="health"><h4>Health: <span id="health4"></span></h4></div>
+			    </div> <!-- close d4 -->
+			</div><!-- close dragon4 box -->
+			<div class="col-sm-2">
+			    <div id="d5" class="dragon">
+			    	<h4>Attack: <span id="atkPw5" class="atk"></span></h4><h4>Counter Attack: <span id="ctrAtPw5" class="ctAt"></span></h4>
+			    <br>
+			    <img class="responsive-image" id="dragon5" alt="dragon5" src="assets/images/dragon5.gif">
+			    <div class="health"><h4>Health: <span id="health5"></span></h4></div>
+			    </div> <!-- close d5 -->
+			</div><!-- close dragon5 box -->
+		</div> <!-- close chooseDragon -->
+	    </div> <!-- close row 2 -->
+	    <div class="row row3">
+		<div class="col-sm-12" id="fightArena">
+		    <div class="row subRow1">
+			<h2>Fighting Arena</h2>
+		    </div> <!-- subRow1 close -->
+		    <div class="row subRow2">
+			<div class="col-sm-4 col-sm-offset-1" id="yourDragon">
+			</div> <!-- close yourDragon -->
+			<div class="col-sm-3" id="atkInfo">
+			    <span id="update"></span><br>
+			    <button type="button" class="btn-default" id="reset">Reset</button>
+			</div>
+			<div class="col-sm-4" id="defender">
+			</div><!-- close defender -->
+		    </div> <!-- close subRow2 -->
+		    <div class="row subRow3">
+			<div class="col-sm-3">
+			    <button type="button" class="btn-default" id="attack">Attack</button>
+			</div>
+		    </div> <!-- close subRow3 -->
+		</div> <!-- close fight arena -->
+	    </div> <!-- close row3 -->
+	</div> <!-- close conatiner -->
+	<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+	<script src="assets/javascript/game.js"></script>
+    </body>
+</html>

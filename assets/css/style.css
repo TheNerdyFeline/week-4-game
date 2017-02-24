@@ -1,0 +1,62 @@
+body {
+    background-image: url("../images/sky3.jpg");
+}
+
+.jumbotron {
+    font-family: 'Baloo', cursive;
+    opacity: 0.5;
+    background: 
+}
+
+h1 {
+    text-align: center;
+}
+
+.row2 {
+
+}
+
+#chooseDragon {
+ margin: auto;
+}
+
+.responsive-image {
+    width: 120px;
+    display: block;
+    margin: auto;
+}
+
+#dragon1 {
+    width: 130px;
+}
+
+#dragon2 {
+    width: 90px;
+}
+
+.row3 {
+
+    height: 400px;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Baloo', cursive;
+}
+
+#yourDragon, #defender, #atkInfo {
+    height: 200px;
+}
+
+h4 {
+    font-size: 16px;
+}
+
+.health {
+    text-align: center;
+}
+
+.dragon {
+    border: 1px solid black;
+    padding: 5px;
+}
