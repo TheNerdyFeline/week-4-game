@@ -5,10 +5,10 @@ $ (document).ready();
 var pickDragon = false;
 var pickEnemy = false;
 var dragonList = [];
-var newAttack = 0;
-var newHealth = 0;
+var wins = 0;
 var myHealth, myAttack;
 var defHealth, ctAttack;
+var myDragon, enemyDragon;
 //create object for dragons
 function dragon(attack, counter, healthPoints) {
     this.attackPower = attack;
@@ -16,14 +16,13 @@ function dragon(attack, counter, healthPoints) {
     this.healthPoints = healthPoints;
 }
 
-var drg1 = new dragon(6, 10, 150);
+var drg1 = new dragon(7, 10, 150);
 var drg2 = new dragon(9, 12, 200);
 var drg3 = new dragon(11, 14, 250);
 var drg4 = new dragon(13, 16, 300);
 var drg5 = new dragon(15, 18, 350);
 
 dragonList.push(drg1, drg2, drg3, drg4, drg5);
-console.log (dragonList);
 
 // show dragon info in html
 $("#atkPw1").html(drg1.attackPower);
@@ -43,6 +42,9 @@ $("#health4").html(drg4.healthPoints);
 $("#health5").html(drg5.healthPoints);
 
 $("#reset").hide();
+
+var originalDragons = $("#chooseDragon").clone(true, true);
+var originalArena = $("#fightArena").clone(true, true);
 
 // build on click function to see if any .dragon clicked
 // when user picks dragon move to yourDragon
@@ -128,11 +130,31 @@ $("#attack").on("click", function(){
 	incAtPw = parseInt(incAtPw) + parseInt(myAtPw);
 	defDragonHealth = parseInt(defDragonHealth) - parseInt(incAtPw);
 	myDragonHealth = parseInt(myDragonHealth) - parseInt(defDragonCt);
-	console.log(myDragonHealth);
 	$(myHealth).html(myDragonHealth);
 	$(defHealth).html(defDragonHealth);
+	console.log(wins);
+    } else if (defDragonHealth <= 0){
+	$("#update").html("You have defeated this dragon, pick your next dragon to fight");
+	$("#defender").empty();
+	wins++;
+	console.log(wins);
+	pickEnemy = false;
+	
+    } else if (myDragonHealth <= 0) {
+	$("#update").html("You lose! Click on reset to try again");
+	$("#reset").show();
+	
+    } else if (wins === 4); {
+	$("#update").html("You win!!! click restart to fight again.");
+	$("#reset").show();
     }
 });
 
-// update counters and when hit 0 what to do
+$("#reset").on("click", function() {
+    $("#chooseDragon").replaceWith(originalDragons);
+    $("#fightArena").replaceWith(originalArena);
+    pickDragon = false;
+    pickEnemy = false;
+});
+
 // reset appears when user wins or loses and resets all counters
