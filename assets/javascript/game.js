@@ -53,8 +53,8 @@ function startGame() {
     var originalDragons = $(".chooseDragon").clone(true, true);
     $(".chooseDragon").replaceWith(originalDragons);
     
-    // build click function to see if any .dragon clicked
     // when user picks dragon move to yourDragon
+    // when user picks enemy move to defender
     $("#d1").click(function() {
 	if (!pickDragon && !pickEnemy) {
 	    $("#d1").appendTo($("#yourDragon"));
@@ -171,7 +171,7 @@ function startGame() {
 
 
 $("#reset").click(function() {
-    startGame();
+   location.reload();
 });
 
 // reset appears when user wins or loses and restarts game
